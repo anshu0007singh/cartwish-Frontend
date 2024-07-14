@@ -7,6 +7,7 @@ import Table from '../Common/Table'
 import QuantityInput from '../SingleProduct/QuantityInput'
 import { CheckoutAPI } from '../../Services/orderServices'
 import { toast } from 'react-toastify'
+import config from '../../config.json'
 
 const CartPage = () => {
     const [subTotal,setSubTotal] = useState(0)
@@ -34,7 +35,7 @@ const CartPage = () => {
   return (
     <section className="align_center cart_page">
         <div className="align_center user_info">
-            <img src={`http://localhost:5000/profile/${user?.profilePic}`} alt="user profile"/>
+            <img src={`${config.backendURL}/profile/${user?.profilePic}`} alt="user profile"/>
             <div>
                 <p className="user_name">Name : {user?.name}</p>
                 <p className="user_email">Email : {user?.email }</p>
